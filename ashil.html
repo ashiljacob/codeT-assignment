@@ -7,56 +7,85 @@
 
 
     <style>
-        
+        .container-div{
+            margin-left: 70px;margin-top: 70px;
+        }
+        .container-p{
+            margin-left: 100px;
+            margin-top: -23px;
+            padding-left: 20px;
+
+        }
 
     </style>
 </head>
 
 <body>
-    <x-foo>
-    
-        <h2>Text Area</h2>
-        <form name="form1">
-            <input type="text" onkeyup="callme(this);" name="text1">
-        </form>
-        <div class="container" style="margin-left: 70px;">
+    <custom-tag class="custom-tag">
+        <div class="container container-div" >
 
-            <div class="col" style="margin: left 50px;">
+            <h2>Text Area</h2>
+            <textarea onkeyup="callme(this);" name="" id="" cols="80" rows="10" onended="clearText()"></textarea>
+
+            <div class="col">
                     Total Char :
             </div>
-            <p id="totalChar" style="margin-left: 100px;margin-top: -23px;"> </p>
+            <p id="totalChar" class="container-p"> </p>
             
         
             <div class="col">
                     Total Words :
                 </div>
-            <p id="totalWords" style="margin-left: 100px;margin-top: -23px;"> </p>
+            <p id="totalWords" class="container-p"></p>
+            
+            <div class="col">
+                    Total Lines :
+                </div>
+            <p id="totalLines" class="container-p" value="0"> </p>
             
             </div>
 
-    </x-foo>
+    </custom-tag>
 
     <script>
 
+        // customElements.define('custom-tag ', class extends HTMLElement {});
+    
 
         function callme(field) {
+
+            var charCount = field.value.length;
+
+            document.getElementById("totalChar").innerHTML=charCount;
+
 
             var wordCount = field.value.split(' ')
                         .filter(function(n) { return n != '' })
                         .length ;
 
+            var lineCount = field.value.split('.')
+                            .filter(function(n) { return n != '' })
+                            .length ;
+
+        
+            
             if( wordCount != undefined && wordCount> 0 ){
                     console.log("Word Count : ",wordCount)
+                    document.getElementById("totalWords").innerHTML=wordCount;
 
                 }
 
-                console.log(field.value.length)
-                // console.log("Word Count : ",wordCount)
+                if( lineCount != undefined && lineCount> 0 ){
+                    console.log("Total Line : ",lineCount)
+                    document.getElementById("totalLines").innerHTML=lineCount;
+                }else{
+                    lineCount =0
+                }
+
+                console.log("Total Line : ",lineCount)
             
             console.log(field.value)
 
-            document.getElementById("totalChar").innerHTML=field.value.length;
-            document.getElementById("totalWords").innerHTML=wordCount;
         }
 
 
@@ -66,8 +95,6 @@
     
 
 </body>
-
-
 </html>
 
 
