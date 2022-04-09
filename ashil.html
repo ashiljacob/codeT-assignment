@@ -46,11 +46,13 @@
             </div>
 
     </custom-tag>
-
+  
     <script>
+        
 
-        // customElements.define('custom-tag ', class extends HTMLElement {});
-    
+        customElements.define('custom-tag', class extends HTMLElement {});
+    // var XFoo = document.registerElement('custom-tag');
+    // document.body.appendChild(new XFoo());
 
         function callme(field) {
 
