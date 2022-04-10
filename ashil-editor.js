@@ -1,8 +1,13 @@
 
 class AshilEditor extends HTMLElement {
 
+    constructor(){
+        super();
+    }
+
     connectedCallback() {
-        this.innerHTML = `<ashil-editor class="custom-tag">
+      
+        this.innerHTML = `
 
         <div class="container container-div">
             <div class="row" style="float: left;">
@@ -19,21 +24,23 @@ class AshilEditor extends HTMLElement {
 
             </div>
 
-        </div>
+        </div>`
 
-    </ashil-editor>`
     this.style=`.home-page-h1{
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         margin-left: 100px;
-      }
-      body{
+    }
+    body{
         background-color: cadetblue;
-      }
-      ashil-editor{
+    }
+    ashil-editor{
         background-color: antiquewhite;
-      }`
+    }`
+
 
     }
+    
+    
 
     
 }
