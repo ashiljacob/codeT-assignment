@@ -1,0 +1,24 @@
+.container-div{
+    margin-left: 70px;margin-top: 70px;
+    /* background-color: yellowgreen; */
+}
+.container-p{
+    margin-left: 80px;
+    margin-top: auto;
+    padding-left: 20px;
+    padding-top: 10px;
+
+}
+
+p{
+    color: chocolate;
+    font-weight: 600;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.divv-count{
+    display: flex;
+}
+
+ashil-editor{
+    background-color: bisque;
+}
