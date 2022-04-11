@@ -53,9 +53,13 @@ function callme(field) {
     document.getElementById("totalChar").innerHTML="Total Char :"+userInput.length;
 
 
-    var wordCount = userInput.split(/[^\s]+/).length - 1
+    var wordCount = userInput.match(/[\w\d\’\'-]+/gi).length
+
 
     var lineCount = userInput.split(/\r\n|\r|\n/).length 
+
+    // var lineCount = userInput.split('.')
+    //                 .filter((word) => {if (word !== ''  & word != ',') return word}).length;
 
 
     
