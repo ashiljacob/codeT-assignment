@@ -56,10 +56,10 @@ function callme(field) {
     var wordCount = userInput.match(/[\w\d\’\'-]+/gi).length
 
 
-    // var lineCount = userInput.split(/\r\n|\r|\n/).length 
+    // var lineCount = userInput.split(/\r\n|\r|\n/).length;
 
     var lineCount = userInput.split('.')
-                    .filter((word) => {if (word !== ''  & word != ',') return word}).length;
+                    .filter((word) => {if (word !== '') return word}).length;
 
 
     
