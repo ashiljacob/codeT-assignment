@@ -48,7 +48,7 @@ customElements.define('ashil-editor',AshilEditor);
 
 function callme(field) {
 
-    var userInput = field.value.length;
+    var userInput = field.value;
 
     document.getElementById("totalChar").innerHTML="Total Char :"+userInput.length;
 
